@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Encode+Sans+Condensed|Spirax" rel="stylesheet">
+</head>
+
+<body class="new">
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Meme Maker</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="/">Home</a></li>
+                <li><a href="/add">New</a></li>
+            </ul>
+        </div>
+    </nav>
+
+<div class="container">
+    <a href="/"class="text-center">Show all memes</a><br/>
+<!--
+    <table>
+    <tr>
+        <td>
+            <h3><span th:text="${meme.headline}"></span></h3>
+            <p th:if="${meme.image}" !=" null">
+                <img th:src="${meme.image}" width="300px" height="300px"/>
+            </p>
+            <h3><span th:text="${meme.headline2}"></span></h3>
+        </td>
+        <td>
+            <h3 th:text="${meme.description}"></h3>
+        </td>
+
+        <td>
+            <h4><a th:href="@{/update/{id}(id=${meme.id})}">Update</a></h4>
+            <h4><a th:href="@{/detail/{id}(id=${meme.id})}">Details</a></h4>
+                <h4><a th:href="@{/delete/{id}(id=${meme.id})}">Delete</a></h4>
+        </td>
+    </tr>
+</table>
+    -->
+
+    <div class="col-container">
+        <div class="col" style="background:rosybrown">
+            <h3 th:text="${meme.headline}"></h3>
+            <p th:if="${meme.image}" !=" null">
+                <img th:src="${meme.image}" width="300px" height="300px"/>
+            </p>
+            <h3 th:text="${meme.headline2}"></h3>
+        </div>
+
+        <div class="col" style="background:cadetblue">
+            <h3 th:text="${meme.description}"></h3>
+        </div>
+
+        <div class="col" style="background:rosybrown">
+            <a th:href="@{/update/{id}(id=${meme.id})}">Update</a><br/>
+            <a th:href="@{/detail/{id}(id=${meme.id})}">Details</a><br/>
+            <a th:href="@{/delete/{id}(id=${meme.id})}">Delete</a><br/>
+        </div>
+    </div>
+</div>
+</body>
+</html>
